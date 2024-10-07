@@ -1,2 +1,2 @@
 # chat_application
-This is chut application we will be developing with spring boot as beckend with postgresql
+This is chat application we will be developing with spring boot as beckend with postgresql
