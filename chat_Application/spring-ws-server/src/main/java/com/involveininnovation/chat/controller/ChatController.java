@@ -23,16 +23,20 @@ public class ChatController {
     @MessageMapping("/message")
     @SendTo("/chatroom/public")
     public Message receiveMessage(@Payload Message message) {
-        message.setDate(LocalDateTime.now());
-        chatRepository.save(message);
+        if (message.getMessage() != null && message.getReceiverName() != null) {
+            message.setDate(LocalDateTime.now());
+            chatRepository.save(message);
+        }
         return message;
     }
 
     @MessageMapping("/private-message")
     public Message recMessage(@Payload Message message) {
         simpMessagingTemplate.convertAndSendToUser(message.getReceiverName(), "/private", message);
-        message.setDate(LocalDateTime.now());
-        chatRepository.save(message);
+        if (message.getMessage() != null && message.getReceiverName() != null) {
+            message.setDate(LocalDateTime.now());
+            chatRepository.save(message);
+        }
         System.out.println("Message : " + message.toString());
         return message;
     }
