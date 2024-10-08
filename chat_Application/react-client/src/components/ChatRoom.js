@@ -81,6 +81,7 @@ const ChatRoom = () => {
             if (stompClient) {
               var chatMessage = {
                 senderName: userData.username,
+                receiverName: "ALL",
                 message: userData.message,
                 status:"MESSAGE"
               };
