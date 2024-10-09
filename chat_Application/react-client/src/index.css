@@ -63,6 +63,7 @@ button{
 }
 
 .send-message{
+  margin-top: 10px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -117,6 +118,13 @@ ul {
   flex-direction: row;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   margin: 5px 10px;
+}
+.chat-messages {
+  max-height: 400px; /* Set your desired max height */
+  overflow-y: auto;  /* Enable vertical scrolling when content exceeds height */
+  padding: 10px;
+  list-style-type: none; /* Optional: remove bullets from list */
+  margin: 0;
 }
 .message-data{
   padding:5px;
